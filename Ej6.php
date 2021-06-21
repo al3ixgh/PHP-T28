@@ -10,27 +10,32 @@
             $this->opciones[]=$opc;
         }
 
-        public function mostrarVertical(){
+        private function mostrarVertical(){
             for($i=0;$i<count($this->opciones);$i++){
                 echo '<a href="">'.$this->opciones[$i].'</a>';
                 echo '<br>';
             }
         }
 
-        public function mostrarHorizontal(){
+        private function mostrarHorizontal(){
             for($i=0;$i<count($this->opciones);$i++){
                 echo '<a href="">'.$this->opciones[$i].'</a>';
             }
         }
-        }
 
-        $menu1=new Menu();
+        public function mostrar($orient){
+            if($orient=='vertical'){
+                $this->mostrarVertical();
+            }else $this->mostrarHorizontal();
+        }
+    }
+
+    $menu1=new Menu();
         $menu1->cargarOpc('opcion1');
         $menu1->cargarOpc('opcion2');
         $menu1->cargarOpc('opcion3');
         $menu1->cargarOpc('opcion4');
-        $menu1->orientar('vertical');
-        $menu1->mostrarVertical();
+        $menu1->mostrar('vertical');
         echo "<br>";
-        $menu1->mostrarHorizontal();
+        $menu1->mostrar('horizontal');
 ?>
