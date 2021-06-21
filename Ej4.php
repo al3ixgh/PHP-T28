@@ -5,7 +5,7 @@
         private $colorFondo;
         private $colorFuente;
 
-        public function inicializar($titulo, $alin, $colorFondo, $colorFuente){
+        public function __construct($titulo, $alin, $colorFondo, $colorFuente){
             $this->titulo=$titulo;
             $this->alin=$alin;
             $this->colorFondo=$colorFondo;
@@ -18,8 +18,7 @@
             echo "</div>";
         }
     }   
-    $cabecera1= new CabeceraPagina;
-    $cabecera1->inicializar('cabecera','center','black','white');
+    $cabecera1= new CabeceraPagina('titulo','right','green','orange');
     $cabecera1->mostrar();
 ?>
 
